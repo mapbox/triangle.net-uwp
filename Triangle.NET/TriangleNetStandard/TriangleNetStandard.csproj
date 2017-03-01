@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3A50E4F-4D97-4CF7-B494-EFCFBC7039C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TriangleNetStandard</RootNamespace>
+    <AssemblyName>TriangleNetStandard</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Triangle\Algorithm\Dwyer.cs">
+      <Link>Algorithm\Dwyer.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Algorithm\Incremental.cs">
+      <Link>Algorithm\Incremental.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Algorithm\ITriangulator.cs">
+      <Link>Algorithm\ITriangulator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Algorithm\SweepLine.cs">
+      <Link>Algorithm\SweepLine.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\BadTriQueue.cs">
+      <Link>BadTriQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Behavior.cs">
+      <Link>Behavior.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Carver.cs">
+      <Link>Carver.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\BadSubseg.cs">
+      <Link>Data\BadSubseg.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\BadTriangle.cs">
+      <Link>Data\BadTriangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\Osub.cs">
+      <Link>Data\Osub.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\Otri.cs">
+      <Link>Data\Otri.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\Segment.cs">
+      <Link>Data\Segment.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\Triangle.cs">
+      <Link>Data\Triangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Data\Vertex.cs">
+      <Link>Data\Vertex.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Enums.cs">
+      <Link>Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\BoundingBox.cs">
+      <Link>Geometry\BoundingBox.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\Edge.cs">
+      <Link>Geometry\Edge.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\EdgeEnumerator.cs">
+      <Link>Geometry\EdgeEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\InputGeometry.cs">
+      <Link>Geometry\InputGeometry.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\ISegment.cs">
+      <Link>Geometry\ISegment.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\ITriangle.cs">
+      <Link>Geometry\ITriangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\Point.cs">
+      <Link>Geometry\Point.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\RegionPointer.cs">
+      <Link>Geometry\RegionPointer.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\DataReader.cs">
+      <Link>IO\DataReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\DebugWriter.cs">
+      <Link>IO\DebugWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\FileReader.cs">
+      <Link>IO\FileReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\FileWriter.cs">
+      <Link>IO\FileWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\IGeometryFormat.cs">
+      <Link>IO\IGeometryFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\IMeshFormat.cs">
+      <Link>IO\IMeshFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\InputTriangle.cs">
+      <Link>IO\InputTriangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\IO\TriangleFormat.cs">
+      <Link>IO\TriangleFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Log\ILog.cs">
+      <Link>Log\ILog.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Log\ILogItem.cs">
+      <Link>Log\ILogItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Log\SimpleLog.cs">
+      <Link>Log\SimpleLog.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Log\SimpleLogItem.cs">
+      <Link>Log\SimpleLogItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Mesh.cs">
+      <Link>Mesh.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\NewLocation.cs">
+      <Link>NewLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Primitives.cs">
+      <Link>Primitives.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Quality.cs">
+      <Link>Quality.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Sampler.cs">
+      <Link>Sampler.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Smoothing\ISmoother.cs">
+      <Link>Smoothing\ISmoother.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Smoothing\SimpleSmoother.cs">
+      <Link>Smoothing\SimpleSmoother.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\AdjacencyMatrix.cs">
+      <Link>Tools\AdjacencyMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\BoundedVoronoi.cs">
+      <Link>Tools\BoundedVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\CuthillMcKee.cs">
+      <Link>Tools\CuthillMcKee.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\IVoronoi.cs">
+      <Link>Tools\IVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\QuadTree.cs">
+      <Link>Tools\QuadTree.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\QualityMeasure.cs">
+      <Link>Tools\QualityMeasure.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\RegionIterator.cs">
+      <Link>Tools\RegionIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\Statistic.cs">
+      <Link>Tools\Statistic.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\Voronoi.cs">
+      <Link>Tools\Voronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\VoronoiRegion.cs">
+      <Link>Tools\VoronoiRegion.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\TriangleLocator.cs">
+      <Link>TriangleLocator.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
