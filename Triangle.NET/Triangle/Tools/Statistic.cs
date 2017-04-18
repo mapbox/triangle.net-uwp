@@ -8,8 +8,7 @@
 namespace TriangleNet.Tools
 {
     using System;
-    using System.Text;
-    using TriangleNet.Data;
+    using TriangleNet.Topology;
     using TriangleNet.Geometry;
 
     /// <summary>
@@ -23,13 +22,13 @@ namespace TriangleNet.Tools
         /// Number of incircle tests performed.
         /// </summary>
         public static long InCircleCount = 0;
-        public static long InCircleCountDecimal = 0;
+        public static long InCircleAdaptCount = 0;
 
         /// <summary>
         /// Number of counterclockwise tests performed.
         /// </summary>
         public static long CounterClockwiseCount = 0;
-        public static long CounterClockwiseCountDecimal = 0;
+        public static long CounterClockwiseAdaptCount = 0;
 
         /// <summary>
         /// Number of 3D orientation tests performed.
@@ -109,66 +108,6 @@ namespace TriangleNet.Tools
         /// </summary>
         public double LargestAngle { get { return maxAngle; } }
 
-        int inVetrices = 0;
-        /// <summary>
-        /// Gets the number of input vertices.
-        /// </summary>
-        public int InputVertices { get { return inVetrices; } }
-
-        int inTriangles = 0;
-        /// <summary>
-        /// Gets the number of input triangles.
-        /// </summary>
-        public int InputTriangles { get { return inTriangles; } }
-
-        int inSegments = 0;
-        /// <summary>
-        /// Gets the number of input segments.
-        /// </summary>
-        public int InputSegments { get { return inSegments; } }
-
-        int inHoles = 0;
-        /// <summary>
-        /// Gets the number of input holes.
-        /// </summary>
-        public int InputHoles { get { return inHoles; } }
-
-        int outVertices = 0;
-        /// <summary>
-        /// Gets the number of mesh vertices.
-        /// </summary>
-        public int Vertices { get { return outVertices; } }
-
-        int outTriangles = 0;
-        /// <summary>
-        /// Gets the number of mesh triangles.
-        /// </summary>
-        public int Triangles { get { return outTriangles; } }
-
-        int outEdges = 0;
-        /// <summary>
-        /// Gets the number of mesh edges.
-        /// </summary>
-        public int Edges { get { return outEdges; } }
-
-        int boundaryEdges = 0;
-        /// <summary>
-        /// Gets the number of exterior boundary edges.
-        /// </summary>
-        public int BoundaryEdges { get { return boundaryEdges; } }
-
-        int intBoundaryEdges = 0;
-        /// <summary>
-        /// Gets the number of interior boundary edges.
-        /// </summary>
-        public int InteriorBoundaryEdges { get { return intBoundaryEdges; } }
-
-        int constrainedEdges = 0;
-        /// <summary>
-        /// Gets the number of constrained edges.
-        /// </summary>
-        public int ConstrainedEdges { get { return constrainedEdges; } }
-
         int[] angleTable;
         /// <summary>
         /// Gets the angle histogram.
@@ -215,9 +154,9 @@ namespace TriangleNet.Tools
             int i, j, k;
 
             tri.orient = 0;
-            foreach (var t in mesh.triangles.Values)
+            foreach (var t in mesh.triangles)
             {
-                tri.triangle = t;
+                tri.tri = t;
                 p[0] = tri.Org();
                 p[1] = tri.Dest();
                 p[2] = tri.Apex();
@@ -264,17 +203,6 @@ namespace TriangleNet.Tools
         /// <param name="mesh"></param>
         public void Update(Mesh mesh, int sampleDegrees)
         {
-            inVetrices = mesh.invertices;
-            inTriangles = mesh.inelements;
-            inSegments = mesh.insegments;
-            inHoles = mesh.holes.Count;
-            outVertices = mesh.vertices.Count - mesh.undeads;
-            outTriangles = mesh.triangles.Count;
-            outEdges = (int)mesh.edges;
-            boundaryEdges = (int)mesh.hullsize;
-            intBoundaryEdges = mesh.subsegs.Count - (int)mesh.hullsize;
-            constrainedEdges = mesh.subsegs.Count;
-
             Point[] p = new Point[3];
 
             int k1, k2;
@@ -328,7 +256,7 @@ namespace TriangleNet.Tools
 
             double triMinAngle, triMaxAngle = 1;
 
-            foreach (var tri in mesh.triangles.Values)
+            foreach (var tri in mesh.triangles)
             {
                 triMinAngle = 0; // Min angle:  0 < a <  60 degress
                 triMaxAngle = 1; // Max angle: 60 < a < 180 degress
@@ -344,8 +272,8 @@ namespace TriangleNet.Tools
                     k1 = plus1Mod3[i];
                     k2 = minus1Mod3[i];
 
-                    dx[i] = p[k1].X - p[k2].X;
-                    dy[i] = p[k1].Y - p[k2].Y;
+                    dx[i] = p[k1].x - p[k2].x;
+                    dy[i] = p[k1].y - p[k2].y;
 
                     edgeLength[i] = dx[i] * dx[i] + dy[i] * dy[i];
 
@@ -366,8 +294,8 @@ namespace TriangleNet.Tools
                 }
 
                 //triarea = Primitives.CounterClockwise(p[0], p[1], p[2]);
-                triArea = Math.Abs((p[2].X - p[0].X) * (p[1].Y - p[0].Y) -
-                    (p[1].X - p[0].X) * (p[2].Y - p[0].Y));
+                triArea = Math.Abs((p[2].x - p[0].x) * (p[1].y - p[0].y) -
+                    (p[1].x - p[0].x) * (p[2].y - p[0].y));
 
                 if (triArea < minArea)
                 {
