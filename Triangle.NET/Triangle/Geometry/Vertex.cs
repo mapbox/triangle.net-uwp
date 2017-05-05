@@ -17,7 +17,7 @@ namespace TriangleNet.Geometry
     {
         // Hash for dictionary. Will be set by mesh instance.
         internal int hash;
-
+        public double z;
 #if USE_ATTRIBS
         internal double[] attributes;
 #endif
@@ -37,8 +37,8 @@ namespace TriangleNet.Geometry
         /// </summary>
         /// <param name="x">The x coordinate of the vertex.</param>
         /// <param name="y">The y coordinate of the vertex.</param>
-        public Vertex(double x, double y)
-            : this(x, y, 0)
+        public Vertex(double x, double y, double z = 0)
+            : this(x, y, z, 0)
         {
         }
 
@@ -48,9 +48,10 @@ namespace TriangleNet.Geometry
         /// <param name="x">The x coordinate of the vertex.</param>
         /// <param name="y">The y coordinate of the vertex.</param>
         /// <param name="mark">The boundary mark.</param>
-        public Vertex(double x, double y, int mark)
-            : base(x, y, mark)
+        public Vertex(double x, double y, double z, int mark)
+            : base(x, z, mark)
         {
+            this.z = y;
             this.type = VertexType.InputVertex;
         }
 
