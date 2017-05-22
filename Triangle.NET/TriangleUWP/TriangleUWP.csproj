@@ -107,62 +107,29 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Triangle\Algorithm\Dwyer.cs">
-      <Link>Algorithm\Dwyer.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Algorithm\Incremental.cs">
-      <Link>Algorithm\Incremental.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Algorithm\ITriangulator.cs">
-      <Link>Algorithm\ITriangulator.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Algorithm\SweepLine.cs">
-      <Link>Algorithm\SweepLine.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\BadTriQueue.cs">
-      <Link>BadTriQueue.cs</Link>
-    </Compile>
     <Compile Include="..\Triangle\Behavior.cs">
       <Link>Behavior.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Carver.cs">
-      <Link>Carver.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\BadSubseg.cs">
-      <Link>Data\BadSubseg.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\BadTriangle.cs">
-      <Link>Data\BadTriangle.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\Osub.cs">
-      <Link>Data\Osub.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\Otri.cs">
-      <Link>Data\Otri.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\Segment.cs">
-      <Link>Data\Segment.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\Triangle.cs">
-      <Link>Data\Triangle.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Data\Vertex.cs">
-      <Link>Data\Vertex.cs</Link>
+    <Compile Include="..\Triangle\Configuration.cs">
+      <Link>Configuration.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Enums.cs">
       <Link>Enums.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Geometry\BoundingBox.cs">
-      <Link>Geometry\BoundingBox.cs</Link>
+    <Compile Include="..\Triangle\Geometry\Contour.cs">
+      <Link>Geometry\Contour.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Geometry\Edge.cs">
       <Link>Geometry\Edge.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Geometry\EdgeEnumerator.cs">
-      <Link>Geometry\EdgeEnumerator.cs</Link>
+    <Compile Include="..\Triangle\Geometry\ExtensionMethods.cs">
+      <Link>Geometry\ExtensionMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Geometry\InputGeometry.cs">
-      <Link>Geometry\InputGeometry.cs</Link>
+    <Compile Include="..\Triangle\Geometry\IEdge.cs">
+      <Link>Geometry\IEdge.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\IPolygon.cs">
+      <Link>Geometry\IPolygon.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Geometry\ISegment.cs">
       <Link>Geometry\ISegment.cs</Link>
@@ -173,23 +140,29 @@
     <Compile Include="..\Triangle\Geometry\Point.cs">
       <Link>Geometry\Point.cs</Link>
     </Compile>
+    <Compile Include="..\Triangle\Geometry\Polygon.cs">
+      <Link>Geometry\Polygon.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\Rectangle.cs">
+      <Link>Geometry\Rectangle.cs</Link>
+    </Compile>
     <Compile Include="..\Triangle\Geometry\RegionPointer.cs">
       <Link>Geometry\RegionPointer.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\IO\DataReader.cs">
-      <Link>IO\DataReader.cs</Link>
+    <Compile Include="..\Triangle\Geometry\Segment.cs">
+      <Link>Geometry\Segment.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Geometry\Vertex.cs">
+      <Link>Geometry\Vertex.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\IO\DebugWriter.cs">
       <Link>IO\DebugWriter.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\IO\FileReader.cs">
-      <Link>IO\FileReader.cs</Link>
+    <Compile Include="..\Triangle\IO\FileProcessor.cs">
+      <Link>IO\FileProcessor.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\IO\FileWriter.cs">
-      <Link>IO\FileWriter.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\IO\IGeometryFormat.cs">
-      <Link>IO\IGeometryFormat.cs</Link>
+    <Compile Include="..\Triangle\IO\IFileFormat.cs">
+      <Link>IO\IFileFormat.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\IO\IMeshFormat.cs">
       <Link>IO\IMeshFormat.cs</Link>
@@ -197,35 +170,101 @@
     <Compile Include="..\Triangle\IO\InputTriangle.cs">
       <Link>IO\InputTriangle.cs</Link>
     </Compile>
+    <Compile Include="..\Triangle\IO\IPolygonFormat.cs">
+      <Link>IO\IPolygonFormat.cs</Link>
+    </Compile>
     <Compile Include="..\Triangle\IO\TriangleFormat.cs">
       <Link>IO\TriangleFormat.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Log\ILog.cs">
-      <Link>Log\ILog.cs</Link>
+    <Compile Include="..\Triangle\IO\TriangleReader.cs">
+      <Link>IO\TriangleReader.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Log\ILogItem.cs">
-      <Link>Log\ILogItem.cs</Link>
+    <Compile Include="..\Triangle\IO\TriangleWriter.cs">
+      <Link>IO\TriangleWriter.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Log\SimpleLog.cs">
-      <Link>Log\SimpleLog.cs</Link>
+    <Compile Include="..\Triangle\IPredicates.cs">
+      <Link>IPredicates.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Log\SimpleLogItem.cs">
-      <Link>Log\SimpleLogItem.cs</Link>
+    <Compile Include="..\Triangle\Log.cs">
+      <Link>Log.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Logging\ILog.cs">
+      <Link>Logging\ILog.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Logging\ILogItem.cs">
+      <Link>Logging\ILogItem.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Logging\LogItem.cs">
+      <Link>Logging\LogItem.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Mesh.cs">
       <Link>Mesh.cs</Link>
     </Compile>
+    <Compile Include="..\Triangle\Meshing\Algorithm\Dwyer.cs">
+      <Link>Meshing\Algorithm\Dwyer.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Algorithm\Incremental.cs">
+      <Link>Meshing\Algorithm\Incremental.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Algorithm\SweepLine.cs">
+      <Link>Meshing\Algorithm\SweepLine.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\ConstraintMesher.cs">
+      <Link>Meshing\ConstraintMesher.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\ConstraintOptions.cs">
+      <Link>Meshing\ConstraintOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Converter.cs">
+      <Link>Meshing\Converter.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Data\BadSubseg.cs">
+      <Link>Meshing\Data\BadSubseg.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Data\BadTriangle.cs">
+      <Link>Meshing\Data\BadTriangle.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Data\BadTriQueue.cs">
+      <Link>Meshing\Data\BadTriQueue.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\GenericMesher.cs">
+      <Link>Meshing\GenericMesher.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\IConstraintMesher.cs">
+      <Link>Meshing\IConstraintMesher.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\IMesh.cs">
+      <Link>Meshing\IMesh.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\IQualityMesher.cs">
+      <Link>Meshing\IQualityMesher.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Iterators\EdgeIterator.cs">
+      <Link>Meshing\Iterators\EdgeIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Iterators\RegionIterator.cs">
+      <Link>Meshing\Iterators\RegionIterator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\Iterators\VertexCirculator.cs">
+      <Link>Meshing\Iterators\VertexCirculator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\ITriangulator.cs">
+      <Link>Meshing\ITriangulator.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\QualityMesher.cs">
+      <Link>Meshing\QualityMesher.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Meshing\QualityOptions.cs">
+      <Link>Meshing\QualityOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\MeshValidator.cs">
+      <Link>MeshValidator.cs</Link>
+    </Compile>
     <Compile Include="..\Triangle\NewLocation.cs">
       <Link>NewLocation.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Primitives.cs">
-      <Link>Primitives.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Quality.cs">
-      <Link>Quality.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Sampler.cs">
-      <Link>Sampler.cs</Link>
+    <Compile Include="..\Triangle\RobustPredicates.cs">
+      <Link>RobustPredicates.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Smoothing\ISmoother.cs">
       <Link>Smoothing\ISmoother.cs</Link>
@@ -233,42 +272,100 @@
     <Compile Include="..\Triangle\Smoothing\SimpleSmoother.cs">
       <Link>Smoothing\SimpleSmoother.cs</Link>
     </Compile>
+    <Compile Include="..\Triangle\Smoothing\VoronoiFactory.cs">
+      <Link>Smoothing\VoronoiFactory.cs</Link>
+    </Compile>
     <Compile Include="..\Triangle\Tools\AdjacencyMatrix.cs">
       <Link>Tools\AdjacencyMatrix.cs</Link>
-    </Compile>
-    <Compile Include="..\Triangle\Tools\BoundedVoronoi.cs">
-      <Link>Tools\BoundedVoronoi.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Tools\CuthillMcKee.cs">
       <Link>Tools\CuthillMcKee.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Tools\IVoronoi.cs">
-      <Link>Tools\IVoronoi.cs</Link>
+    <Compile Include="..\Triangle\Tools\Interpolation.cs">
+      <Link>Tools\Interpolation.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Tools\QuadTree.cs">
-      <Link>Tools\QuadTree.cs</Link>
+    <Compile Include="..\Triangle\Tools\IntersectionHelper.cs">
+      <Link>Tools\IntersectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Tools\PolygonValidator.cs">
+      <Link>Tools\PolygonValidator.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\Tools\QualityMeasure.cs">
       <Link>Tools\QualityMeasure.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Tools\RegionIterator.cs">
-      <Link>Tools\RegionIterator.cs</Link>
-    </Compile>
     <Compile Include="..\Triangle\Tools\Statistic.cs">
       <Link>Tools\Statistic.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Tools\Voronoi.cs">
-      <Link>Tools\Voronoi.cs</Link>
+    <Compile Include="..\Triangle\Tools\TriangleQuadTree.cs">
+      <Link>Tools\TriangleQuadTree.cs</Link>
     </Compile>
-    <Compile Include="..\Triangle\Tools\VoronoiRegion.cs">
-      <Link>Tools\VoronoiRegion.cs</Link>
+    <Compile Include="..\Triangle\Tools\VertexSorter.cs">
+      <Link>Tools\VertexSorter.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\DCEL\DcelMesh.cs">
+      <Link>Topology\DCEL\DcelMesh.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\DCEL\Face.cs">
+      <Link>Topology\DCEL\Face.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\DCEL\HalfEdge.cs">
+      <Link>Topology\DCEL\HalfEdge.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\DCEL\Vertex.cs">
+      <Link>Topology\DCEL\Vertex.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\Osub.cs">
+      <Link>Topology\Osub.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\Otri.cs">
+      <Link>Topology\Otri.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\SubSegment.cs">
+      <Link>Topology\SubSegment.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Topology\Triangle.cs">
+      <Link>Topology\Triangle.cs</Link>
     </Compile>
     <Compile Include="..\Triangle\TriangleLocator.cs">
       <Link>TriangleLocator.cs</Link>
     </Compile>
+    <Compile Include="..\Triangle\TrianglePool.cs">
+      <Link>TrianglePool.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\TriangleSampler.cs">
+      <Link>TriangleSampler.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\BoundedVoronoi.cs">
+      <Link>Voronoi\BoundedVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\DefaultVoronoiFactory.cs">
+      <Link>Voronoi\DefaultVoronoiFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\IVoronoiFactory.cs">
+      <Link>Voronoi\IVoronoiFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\Legacy\BoundedVoronoiLegacy.cs">
+      <Link>Voronoi\Legacy\BoundedVoronoiLegacy.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\Legacy\IVoronoi.cs">
+      <Link>Voronoi\Legacy\IVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\Legacy\SimpleVoronoi.cs">
+      <Link>Voronoi\Legacy\SimpleVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\Legacy\VoronoiRegion.cs">
+      <Link>Voronoi\Legacy\VoronoiRegion.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\StandardVoronoi.cs">
+      <Link>Voronoi\StandardVoronoi.cs</Link>
+    </Compile>
+    <Compile Include="..\Triangle\Voronoi\VoronoiBase.cs">
+      <Link>Voronoi\VoronoiBase.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\TriangleUWP.rd.xml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
