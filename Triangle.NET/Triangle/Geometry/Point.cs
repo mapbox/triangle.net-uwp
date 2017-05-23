@@ -7,9 +7,6 @@
 namespace TriangleNet.Geometry
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     /// <summary>
     /// Represents a 2D point.
@@ -17,13 +14,16 @@ namespace TriangleNet.Geometry
     public class Point : IComparable<Point>, IEquatable<Point>
     {
         internal int id;
+        internal int label;
+
         internal double x;
         internal double y;
-        internal int mark;
-        internal double[] attributes;
+#if USE_Z
+        internal double z;
+#endif
 
         public Point()
-            : this(0, 0, 0)
+            : this(0.0, 0.0, 0)
         {
         }
 
@@ -32,53 +32,63 @@ namespace TriangleNet.Geometry
         {
         }
 
-        public Point(double x, double y, int mark)
+        public Point(double x, double y, int label)
         {
             this.x = x;
             this.y = y;
-            this.mark = mark;
+            this.label = label;
         }
 
         #region Public properties
 
         /// <summary>
-        /// Gets the vertex id.
+        /// Gets or sets the vertex id.
         /// </summary>
         public int ID
         {
             get { return this.id; }
+            set { this.id = value; }
         }
 
         /// <summary>
-        /// Gets the vertex x coordinate.
+        /// Gets or sets the vertex x coordinate.
         /// </summary>
         public double X
         {
             get { return this.x; }
+            set { this.x = value; }
         }
 
         /// <summary>
-        /// Gets the vertex y coordinate.
+        /// Gets or sets the vertex y coordinate.
         /// </summary>
         public double Y
         {
             get { return this.y; }
+            set { this.y = value; }
         }
 
+#if USE_Z
         /// <summary>
-        /// Gets the vertex boundary mark.
+        /// Gets or sets the vertex z coordinate.
         /// </summary>
-        public int Boundary
+        public double Z
         {
-            get { return this.mark; }
+            get { return this.z; }
+            set { this.z = value; }
         }
+#endif
 
         /// <summary>
-        /// Gets the vertex attributes (may be null).
+        /// Gets or sets a general-purpose label.
         /// </summary>
-        public double[] Attributes
+        /// <remarks>
+        /// This is used for the vertex boundary mark.
+        /// </remarks>
+        public int Label
         {
-            get { return this.attributes; }
+            get { return this.label; }
+            set { this.label = value; }
         }
 
         #endregion
@@ -154,7 +164,11 @@ namespace TriangleNet.Geometry
 
         public override int GetHashCode()
         {
-            return x.GetHashCode() ^ y.GetHashCode();
+            int hash = 19;
+            hash = hash * 31 + x.GetHashCode();
+            hash = hash * 31 + y.GetHashCode();
+
+            return hash;
         }
 
         public override string ToString()
