@@ -6,8 +6,8 @@ platform:
 configuration:
   - Debug
 
-before_build:
-  - nuget restore
-  
+#before_build:
+#  - nuget restore
+
 build_script:
   - build.bat

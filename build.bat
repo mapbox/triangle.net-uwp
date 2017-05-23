@@ -15,12 +15,16 @@ IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 ECHO ------------------------------
 ECHO building NetStandard
 ECHO ------------------------------
+nuget restore Triangle.NET\TriangleNetStandard\project.json
+IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 msbuild Triangle.NET\Triangle.sln /t:TriangleNetStandard:Rebuild
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 
 ECHO ------------------------------
 ECHO building UWP
 ECHO ------------------------------
+nuget restore Triangle.NET\TriangleUWP\project.json
+IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 msbuild Triangle.NET\Triangle.sln /t:TriangleUWP:Rebuild
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 
