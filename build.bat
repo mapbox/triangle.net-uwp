@@ -3,7 +3,7 @@ SETLOCAL
 SET EL=0
 echo ~~~~~~~~~~~~~~~~~~~ %~f0 ~~~~~~~~~~~~~~~~~~~
 
-CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
+IF "%APPVEYOR%"=="" CALL "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 IF %ERRORLEVEL% NEQ 0 GOTO ERROR
 
 ECHO ------------------------------
